@@ -5,73 +5,80 @@
 <title>My Christmas Miracle 🎄❤️</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(120deg,#0f2027,#203a43,#2c5364);
-  color: white;
-  overflow-x: hidden;
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+  color:white;
+  overflow-x:hidden;
 }
-section {
-  min-height: 100vh;
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.card {
-  background: rgba(0,0,0,0.45);
-  padding: 30px;
-  border-radius: 25px;
-  max-width: 750px;
-  text-align: center;
-  box-shadow: 0 0 25px rgba(0,0,0,0.4);
-  z-index: 2;
-}
-h1 { font-size: 42px; }
-h2 { color: #ffd166; }
-button {
-  margin: 10px;
-  padding: 12px 26px;
-  border: none;
-  border-radius: 25px;
-  background: #ff4d6d;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-button:hover {
-  transform: scale(1.08);
-}
-.hidden { display: none; }
 
-/* Snow + Hearts */
-.fall {
-  position: fixed;
-  top: -10px;
-  font-size: 20px;
-  animation: fall linear infinite;
-  z-index: 1;
+section{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+  position:relative;
 }
-@keyframes fall {
-  to {
-    transform: translateY(110vh);
+
+.card{
+  background:rgba(0,0,0,0.45);
+  padding:35px;
+  border-radius:25px;
+  max-width:780px;
+  text-align:center;
+  box-shadow:0 0 30px rgba(0,0,0,0.5);
+  z-index:2;
+}
+
+h1{font-size:42px;}
+h2{color:#ffd166;}
+
+button{
+  margin:10px;
+  padding:14px 28px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d6d;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+button:hover{transform:scale(1.1);}
+
+.hidden{display:none;}
+
+/* FALLING HEARTS & SNOW */
+.fall{
+  position:fixed;
+  top:-40px;
+  animation:fall linear infinite;
+  pointer-events:none;
+  z-index:1;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(120vh) rotate(360deg);
   }
 }
 
-/* Floating Words */
-.word {
-  position: fixed;
-  bottom: -30px;
-  font-size: 18px;
-  color: rgba(255,255,255,0.6);
-  animation: floatUp 12s linear infinite;
+/* FLOATING WORDS */
+.word{
+  position:fixed;
+  bottom:-40px;
+  font-size:22px;
+  color:rgba(255,255,255,0.6);
+  animation:floatUp linear infinite;
+  pointer-events:none;
 }
-@keyframes floatUp {
-  to {
-    transform: translateY(-120vh);
-    opacity: 0;
+
+@keyframes floatUp{
+  to{
+    transform:translateY(-130vh);
+    opacity:0;
   }
 }
 </style>
@@ -79,40 +86,137 @@ button:hover {
 
 <body>
 
-<!-- Welcome -->
+<!-- SECTION 1 -->
 <section>
-  <div class="card">
-    <h1>🎄 Merry Christmas My Love 🎄</h1>
-    <p>
-      This website is full of love ❤️  
-      memories 📖  
-      prayers 🙏  
-      and one husband who never stops loving you 😌
-    </p>
-    <button onclick="scrollToSection(1)">Start Our Story ➡️</button>
-  </div>
+<div class="card">
+<h1>🎄 Merry Christmas My Love 🎄</h1>
+<p>
+This website is full of love ❤️<br>
+memories 📖<br>
+prayers 🙏<br><br>
+and one husband who never stops loving you 😌
+</p>
+<button onclick="go(1)">Start Our Story ➡️</button>
+</div>
 </section>
 
-<!-- Journey -->
+<!-- SECTION 2 -->
 <section>
-  <div class="card">
-    <h2>🕰️ Our Journey</h2>
-    <p>
-      Started on <b>October 15, 2023</b> ❤️<br><br>
-      Kabhi hansay 😊  
-      Kabhi roye 😢  
-      Kabhi door huay  
-      Phir dobara jud gaye 🤍<br><br>
-      Perfect nahi…  
-      lekin <b>real</b> zaroor hai.
-    </p>
-    <button onclick="scrollToSection(2)">Next 😄</button>
-  </div>
+<div class="card">
+<h2>🕰️ Our Journey</h2>
+<p>
+Started on <b>October 15, 2023</b> ❤️<br><br>
+Kabhi hansay 😊<br>
+Kabhi roye 😢<br>
+Kabhi tootay 💔<br>
+Phir dobara jud gaye 🤍<br><br>
+Perfect nahi…<br>
+lekin <b>real</b> zaroor hai.
+</p>
+<button onclick="go(2)">Next 😄</button>
+</div>
 </section>
 
-<!-- Funny -->
+<!-- SECTION 3 -->
 <section>
-  <div class="card">
+<div class="card">
+<h2>😂 Honest Relationship Report</h2>
+<p>
+❌ No fights<br>
+❌ Smooth ride<br>
+✅ Still choosing each other ❤️
+</p>
+<button onclick="alert('Achievement Unlocked 🏆 — Survived 2+ years with me 😂❤️')">
+Unlock Achievement
+</button>
+<button onclick="go(3)">Secret Love 💌</button>
+</div>
+</section>
+
+<!-- SECTION 4 -->
+<section>
+<div class="card">
+<h2>💌 Choose One</h2>
+
+<button onclick="show(1)">Why I Love You ❤️</button>
+<button onclick="show(2)">When Things Get Hard 🤍</button>
+<button onclick="show(3)">Forever Promise 🔐</button>
+
+<p id="m1" class="hidden">Because even on my worst days, you are my comfort 🤍</p>
+<p id="m2" class="hidden">Even when life gets heavy, my heart stays with you 💖</p>
+<p id="m3" class="hidden">No matter what happens, I will always choose you 🔒</p>
+
+<button onclick="go(4)">My Prayer 🙏</button>
+</div>
+</section>
+
+<!-- SECTION 5 -->
+<section>
+<div class="card">
+<h2>🙏 My Christmas Prayer for You</h2>
+<p>
+Oh God 🤍<br><br>
+May <b>2026 be the most beautiful year of her life</b> ✨<br><br>
+Usay wo sab mile jo wo chahti hai,<br>
+jo wo mangti hai,<br>
+aur jin khwabon ko us ne dil mein basaya hai 💖<br><br>
+Us ka sukoon laut aaye,<br>
+us ki tensions khatam ho jayein,<br>
+aur us ka dil hamesha mehfooz mehsoos kare 🤍
+</p>
+<button onclick="alert('You are my Christmas miracle ❤️🎄')">
+Final Surprise 🎁
+</button>
+</div>
+</section>
+
+<script>
+function go(i){
+  document.querySelectorAll("section")[i].scrollIntoView({behavior:"smooth"});
+}
+
+function show(n){
+  document.querySelectorAll("p[id^='m']").forEach(e=>e.classList.add("hidden"));
+  document.getElementById("m"+n).classList.remove("hidden");
+}
+
+/* BIG HEARTS & SNOW */
+setInterval(()=>{
+  const el=document.createElement("div");
+  el.className="fall";
+  el.style.left=Math.random()*100+"vw";
+
+  const size=30+Math.random()*50; // BIG SIZE
+  el.style.fontSize=size+"px";
+  el.style.opacity=Math.random()*0.5+0.5;
+
+  el.innerHTML=Math.random()>0.5?"❤️":"❄️";
+
+  // speed difference
+  el.style.animationDuration=
+    el.innerHTML==="❤️"
+    ? (8+Math.random()*6)+"s"
+    : (4+Math.random()*4)+"s";
+
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),12000);
+},250);
+
+/* FLOATING WORDS */
+const words=["Love","Forever","You & Me","Sukoon","Always","Hope","Together"];
+setInterval(()=>{
+  const w=document.createElement("div");
+  w.className="word";
+  w.innerText=words[Math.floor(Math.random()*words.length)];
+  w.style.left=Math.random()*100+"vw";
+  w.style.animationDuration=(12+Math.random()*6)+"s";
+  document.body.appendChild(w);
+  setTimeout(()=>w.remove(),16000);
+},1800);
+</script>
+
+</body>
+</html>  <div class="card">
     <h2>😂 Honest Relationship Report</h2>
     <p>
       ❌ No fights<br>
